@@ -17,12 +17,27 @@ SHEET = GSPREAD_CLIENT.open("running_tracker")
 def get_date():
     """Get and validate date from user input"""
     while True:
-        date_str = input("Enter the date of your run (DD-MM-YYYY):\n")
+        date = input("Enter the date of your run (DD-MM-YYYY):\n")
         try:
-            datetime.datetime.strptime(date_str, "%d-%m-%Y")
-            return date_str
+            datetime.datetime.strptime(date, "%d-%m-%Y")
+            return date
         except ValueError:
             print("Invalid date format. Please enter in DD-MM-YYYY format.")
 
 
+def get_weight():
+    """Get and validate weight from user input"""
+    while True:
+        weight_str = input("Enter your weight in kg:\n")
+        try:
+            weight = float(weight_str)
+            if weight > 0:
+                return weight
+            else:
+                print("Weight must be greater than zero.")
+        except ValueError:
+            print("Invalid data. Please enter a number.")
+
+
 get_date()
+get_weight()
