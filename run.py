@@ -1,5 +1,6 @@
 import datetime
 import time
+import tabulate
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -91,6 +92,16 @@ def update_worksheet(data):
     print("Your Running Tracker updated successfully!")
 
 
+def show_data():
+    """Display all data from the 'log' worksheet in a nice table view"""
+    log = SHEET.worksheet("log")
+    all_data = log.get_all_values()
+    headers = all_data[1]
+    data_rows = all_data[2:]
+    table = tabulate.tabulate(data_rows, headers=headers, tablefmt="grid")
+    print(table)
+
+
 def main():
     """Run all program functions"""
     date = get_date()
@@ -114,6 +125,13 @@ def main():
     time.sleep(1)
     run_data = [date, distance, run_time, pace, speed, burned_calories]
     update_worksheet(run_data)
+    print("* * * * * * * * * * * *")
+    time.sleep(1)
+    check_data = input("Do you want to display all running data? (yes/no): ")
+    if check_data.lower() == 'yes':
+        print("Sure! Just a second.")
+        time.sleep(1)
+        show_data()
 
 
 print("Welcome to Running Training Tracker!")
