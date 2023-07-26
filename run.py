@@ -84,6 +84,28 @@ def calculate_burned_calories(weight, distance):
     return round(distance * weight * 0.75)
 
 
-get_date()
-get_weight()
-get_distance()
+def update_worksheet(data):
+    log = SHEET.worksheet("log")
+    log.append_row(data)
+    print("Your Running Tracker updated successfully!")
+
+
+def main():
+    """Run all program functions"""
+    date = get_date()
+    weight = get_weight()
+    time = get_time()
+    distance = get_distance()
+    print("Calculating your stata...")
+    pace = calculate_pace(distance, time)
+    print(f"Your pace is {pace} m/km.")
+    speed = calculate_avg_speed(distance, time)
+    print(f"Your average speed  is {speed} km/h.")
+    burned_calories = calculate_burned_calories(weight, distance)
+    print(f"You have burned {burned_calories} calories.")
+    run_data = [date, distance, time, pace, speed, burned_calories]
+    update_worksheet(run_data)
+
+
+print("Welcome to Running Training Tracker!")
+main()
