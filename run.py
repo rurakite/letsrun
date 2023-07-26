@@ -127,7 +127,7 @@ def main():
     update_worksheet(run_data)
     print("* * * * * * * * * * * *")
     time.sleep(1)
-    check_data = input("Do you want to display all running data? (yes/no): ")
+    check_data = input("Do you want to display all running data? (yes/no):\n ")
     if check_data.lower() == 'yes':
         print("Sure! Just a second.")
         time.sleep(1)
