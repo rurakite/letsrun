@@ -39,5 +39,34 @@ def get_weight():
             print("Invalid data. Please enter a number.")
 
 
+def get_time():
+    """Get and validate time from user input"""
+    while True:
+        time_str = input("Enter time of your run in minutes:\n")
+        try:
+            time = float(time_str)
+            if time > 0:
+                return time
+            else:
+                print("Time must be greater than zero.")
+        except ValueError:
+            print("Invalid data. Please enter a number.")
+
+
+def get_distance():
+    """Get and validate distance from user input"""
+    while True:
+        distance_str = input("Enter the distance you done in km:\n")
+        try:
+            distance = float(distance_str)
+            if distance > 0:
+                return distance
+            else:
+                print("Distance must be greater than zero.")
+        except ValueError:
+            print("Invalid data. Please enter a number.")
+
+
 get_date()
 get_weight()
+get_distance()
