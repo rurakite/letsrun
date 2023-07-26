@@ -162,4 +162,10 @@ The below steps were followed to deploy this project to Heroku:
 * Scroll down to Manual Deploy, select "main" branch and click "Deploy Branch".
 * The app will now be deployed to heroku
 
+## Credits
+
+[Gareth-McGirr](https://github.com/Gareth-McGirr) - great thanks for mentoring and readme.md file structure.
+
+[Love Sandwiches Walkthrough Project ](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LS101+2021_T1/courseware/293ee9d8ff3542d3b877137ed81b9a5b/58d3e90f9a2043908c62f31e51c15deb/) - project idea and deploying.
+
 
