@@ -67,6 +67,23 @@ def get_distance():
             print("Invalid data. Please enter a number.")
 
 
+def calculate_avg_speed(distance, time):
+    """Calculate average speed"""
+    speed = round(distance / (time / 60), 2)
+    return speed
+
+
+def calculate_pace(distance, time):
+    """Calculate average pace"""
+    pace = round(time / distance, 2)
+    return pace
+
+
+def calculate_burned_calories(weight, distance):
+    """Calculate burned calories"""
+    return round(distance * weight * 0.75)
+
+
 get_date()
 get_weight()
 get_distance()
