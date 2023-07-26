@@ -46,9 +46,9 @@ def get_time():
     while True:
         time_str = input("Enter time of your run in minutes:\n")
         try:
-            time = float(time_str)
-            if time > 0:
-                return time
+            run_time = float(time_str)
+            if run_time > 0:
+                return run_time
             else:
                 print("Time must be greater than zero.")
         except ValueError:
@@ -69,15 +69,15 @@ def get_distance():
             print("Invalid data. Please enter a number.")
 
 
-def calculate_avg_speed(distance, time):
+def calculate_avg_speed(distance, run_time):
     """Calculate average speed"""
-    speed = round(distance / (time / 60), 2)
+    speed = round(distance / (run_time / 60), 2)
     return speed
 
 
-def calculate_pace(distance, time):
+def calculate_pace(distance, run_time):
     """Calculate average pace"""
-    pace = round(time / distance, 2)
+    pace = round(run_time / distance, 2)
     return pace
 
 
